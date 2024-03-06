@@ -6,7 +6,6 @@ from models.experimental import *
 from utils.datasets import *
 from utils.utils import *
 
-
 def detect(save_img=False):
     out, source, weights, view_img, save_txt, imgsz = \
         opt.output, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
@@ -133,11 +132,11 @@ def detect(save_img=False):
 
     print('Done. (%.3fs)' % (time.time() - t0))
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='./weights/yolov5x.pt', help='model.pt path(s)')
-    parser.add_argument('--source', type=str, default=f'inference/images', help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--weights', nargs='+', type=str, default='./weights/1.pt', help='model.pt path(s)')
+    parser.add_argument('--source', type=str, default=f'0', help='source')  #输入源：摄像头
+    # parser.add_argument('--source', type=str, default=f'data/safe.png', help='source')  #输入源：文件
     parser.add_argument('--output', type=str, default='inference/output', help='output folder')  # output folder
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.4, help='object confidence threshold')
